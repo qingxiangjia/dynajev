@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="theme-color" content="#214f3a" />
+    <meta name="description" content="DynaJev keeps unfinished slow reasoning useful for fast decisions as the environment changes." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Timely Guidance for Fast Decisions: Dynamic LLM–Jev Collaboration under Time Pressure" />
+    <meta property="og:description" content="Keeping unfinished slow reasoning useful for fast decisions as the environment changes." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Timely Guidance for Fast Decisions: Dynamic LLM–Jev Collaboration under Time Pressure" />
+    <meta name="twitter:description" content="Keeping unfinished slow reasoning useful for fast decisions as the environment changes." />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./site.css" />
+    <script src="./site.js" defer></script>
+    <title>Timely Guidance for Fast Decisions: Dynamic LLM–Jev Collaboration under Time Pressure</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="nav-shell">
+        <a class="brand" href="#overview" aria-label="DynaJev, back to overview">
+          <svg viewBox="0 0 36 36" aria-hidden="true">
+            <rect width="36" height="36" rx="11" fill="currentColor"></rect>
+            <path d="M9 11h8c5 0 5 14 10 14M9 25h8c5 0 5-14 10-14" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"></path>
+            <circle cx="10" cy="11" r="2" fill="white"></circle>
+            <circle cx="10" cy="25" r="2" fill="white"></circle>
+          </svg>
+          <span>Dyna<span>Jev</span></span>
+        </a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Toggle navigation</span><span></span><span></span><span></span>
+        </button>
+        <nav id="site-nav" aria-label="Main navigation">
+          <a href="#overview">Overview</a>
+          <a href="#videos">Videos</a>
+          <a href="#method">Method</a>
+          <a href="#results">Results</a>
+          <a href="#analysis">Analysis</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero-section" id="overview" aria-labelledby="page-title">
+        <div class="page-shell">
+          <div class="hero-copy">
+            <p class="eyebrow"><span>Research overview</span>Dynamic LLM–Jev collaboration</p>
+            <h1 id="page-title">Timely Guidance for Fast Decisions: Dynamic LLM–Jev Collaboration under Time Pressure</h1>
+            <p class="hero-lede">Keeping unfinished slow reasoning useful for fast decisions as the environment changes.</p>
+            <div class="resource-links hero-resources" data-resource-links hidden aria-label="Paper resources"></div>
+          </div>
+
+          <div class="abstract-card">
+            <p class="card-label">In brief</p>
+            <p>Agents must act within limited decision windows while the state underlying slow reasoning continues to change. DynaJev combines an LLM planner with Jev, a System One model for fast, structured decisions. Handoffs adapt the visible reasoning prefix to the latest observation, and post-execution feedback controls whether slow reasoning continues or restarts. Offline, collaboration trajectories provide role-specific skills for planning and action selection with frozen model weights.</p>
+          </div>
+
+          <figure class="paper-figure overview-figure">
+            <button class="figure-button" type="button" data-figure-src="./assets/overview-BVs2h3Np.png" data-figure-title="The challenge and DynaJev’s response">
+              <img src="./assets/overview-BVs2h3Np.png" alt="Paper overview showing time-constrained decisions, challenges of partial reasoning, and DynaJev’s structured handoff, replanning, and early guidance" />
+              <span>Expand Figure 1</span>
+            </button>
+            <figcaption>Figure 1. DynaJev turns partial reasoning into guidance for the current state and selectively refreshes slow reasoning as the environment changes.</figcaption>
+          </figure>
+
+          <div class="challenge-grid" aria-label="Challenges and improvements">
+            <article class="challenge-card">
+              <div><p class="challenge-label">Challenge 01</p><h3>Ambiguous action cues</h3><p>Partial reasoning may contain tentative alternatives without a clear recommendation for the current move.</p></div>
+              <span class="challenge-arrow" aria-hidden="true">→</span>
+              <div class="improvement"><p class="challenge-label">Improvement</p><h3>Current action guidance</h3><p>Structured handoffs turn available reasoning into action recommendations, targets, short routes, and risks.</p></div>
+            </article>
+            <article class="challenge-card">
+              <div><p class="challenge-label">Challenge 02</p><h3>Stale reasoning</h3><p>Guidance can become outdated as actions change the environment while the planner continues from an earlier observation.</p></div>
+              <span class="challenge-arrow" aria-hidden="true">→</span>
+              <div class="improvement"><p class="challenge-label">Improvement</p><h3>Updated guidance and selective restarts</h3><p>The formatter retains applicable guidance, revises outdated details, and marks uncertainty; feedback restarts the planner when its planning basis no longer applies.</p></div>
+            </article>
+            <article class="challenge-card">
+              <div><p class="challenge-label">Challenge 03</p><h3>Late useful guidance</h3><p>Waiting for completed reasoning can miss the decision window.</p></div>
+              <span class="challenge-arrow" aria-hidden="true">→</span>
+              <div class="improvement"><p class="challenge-label">Improvement</p><h3>Act before reasoning completes</h3><p>Jev uses the currently visible prefix and handoff to select an action within the shared budget.</p></div>
+            </article>
+          </div>
+
+          <div class="overview-result">
+            <div><p class="card-label">Across the evaluation</p><p>DynaJev achieves the highest or joint-highest Snake scores across the evaluated difficulties and competitive performance in additional tasks.</p></div>
+            <a class="text-link" href="#videos">See the comparisons <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section videos-section" id="videos" aria-labelledby="videos-title">
+        <div class="page-shell">
+          <header class="section-header inverse-header">
+            <p class="section-number">02 / Comparison videos</p>
+            <h2 id="videos-title">See the agents in action</h2>
+            <p>Compare how different collaboration strategies act as the environment evolves. Snake is the main demonstration; additional tasks show the framework in other settings.</p>
+          </header>
+
+          <div class="policy-primer" aria-label="Restart policy summary">
+            <article><span>Completion:</span><p>keep the current planning round until its full response has been exposed to the action loop, then start a new round.</p></article>
+            <article><span>Per-Step:</span><p>start a new planning round at every step.</p></article>
+            <article><span>Feedback:</span><p>use post-execution feedback to decide whether to continue or restart.</p></article>
+          </div>
+          <p class="video-interface-note">All recordings shown here use the Handoff interface, which gives the actor both structured guidance and the visible reasoning prefix.</p>
+          <aside class="recording-scope" aria-label="Recording and evaluation configuration note">
+            <strong>Selected qualitative recordings.</strong>
+            <span>These clips were generated with a configured total output budget of 2,304 tokens per step and an 8,192-token planner cap. The aggregate evaluation below uses 2,048 tokens per step and a 12,288-token round cap, so the clips illustrate behavior but are not matched per-seed reproductions of the reported tables. After the initial-state frame, playback advances at one second per environment action and does not show inference time.</span>
+          </aside>
+
+          <div class="video-explorer">
+            <div class="tab-scroll">
+              <div class="tab-list environment-tabs" role="tablist" aria-label="Video environment">
+                <button type="button" role="tab" aria-selected="true" data-video-environment="snake">Snake</button>
+                <button type="button" role="tab" aria-selected="false" data-video-environment="freeway" tabindex="-1">Freeway</button>
+                <button type="button" role="tab" aria-selected="false" data-video-environment="overcooked" tabindex="-1">Overcooked</button>
+                <button type="button" role="tab" aria-selected="false" data-video-environment="pvz" tabindex="-1">Plants vs. Zombies</button>
+              </div>
+            </div>
+            <div id="video-stage" class="video-stage" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section method-section" id="method" aria-labelledby="method-title">
+        <div class="page-shell">
+          <header class="section-header">
+            <p class="section-number">03 / Method</p>
+            <h2 id="method-title">How DynaJev keeps reasoning useful</h2>
+            <p>Update the guidance for the current state, and restart slow reasoning when its planning basis no longer applies.</p>
+          </header>
+
+          <figure class="paper-figure method-paper-figure">
+            <button class="figure-button" type="button" data-figure-src="./figure/method.jpg" data-figure-title="DynaJev framework (Figure 2)"><img src="./figure/method.jpg" alt="DynaJev framework showing progressive slow-planner prefixes, current-state handoffs, Jev action selection, feedback-controlled replanning, and offline skill refinement" /><span>Expand Figure 2</span></button>
+            <figcaption>Figure 2. Dynamic LLM–Jev collaboration with progressively available reasoning, current-state handoff construction, and feedback-controlled replanning. Offline trajectory refinement supplies instructions to the planner and actor.</figcaption>
+          </figure>
+
+          <div class="role-grid">
+            <article><span>01</span><h3>LLM Planner</h3><p>Develops slow reasoning across decision windows. Only the released prefix is available to downstream modules.</p></article>
+            <article><span>02</span><h3>LLM Formatter</h3><p>Combines the visible prefix with the latest observation to produce structured guidance for the current state.</p></article>
+            <article><span>03</span><h3>Jev Actor</h3><p>Selects the current action using the latest observation, the handoff, and the visible prefix.</p></article>
+            <article><span>04</span><h3>Jev Feedback</h3><p>Checks the planning basis after execution and requests a restart when changes such as an invalid target or newly blocked route undermine it. Ordinary movement or elapsed steps alone need not trigger a restart.</p></article>
+          </div>
+          <p class="role-note">Two model backbones, four prompt roles.</p>
+
+          <div class="method-detail-grid">
+            <section class="handoff-card" aria-labelledby="handoff-title">
+              <p class="card-label">Task-specific guidance</p>
+              <h3 id="handoff-title">A Snake handoff can organize four kinds of information.</h3>
+              <div class="handoff-fields">
+                <div><strong>SAFE</strong><span>Immediate action recommendations and notes</span></div>
+                <div><strong>TARGET</strong><span>The current target and relevant timing</span></div>
+                <div><strong>ROUTE</strong><span>An advisory short continuation</span></div>
+                <div><strong>RISKS</strong><span>Hazards and unresolved uncertainty</span></div>
+              </div>
+              <p>The route is advisory. Jev reselects each action using the latest observation.</p>
+              <p>Current observations take precedence when they conflict with slow guidance. Updating the handoff does not rewrite the ongoing planner response.</p>
+            </section>
+
+            <section class="configuration-card" aria-labelledby="configuration-title">
+              <p class="card-label">Seven configurations</p>
+              <h3 id="configuration-title">Separate the interface from the restart policy.</h3>
+              <div class="table-scroll" tabindex="0" aria-label="Scrollable collaboration configuration matrix">
+                <table class="method-matrix">
+                  <thead><tr><th scope="col">Restart policy</th><th scope="col">Prefix interface</th><th scope="col">Handoff interface</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">Completion</th><td>Prefix–Completion</td><td>Handoff–Completion</td></tr>
+                    <tr><th scope="row">Per-Step</th><td>Prefix–Per-Step</td><td>Handoff–Per-Step</td></tr>
+                    <tr><th scope="row">Feedback</th><td>Prefix–Feedback</td><td class="ours-cell">DynaJev <span>Ours</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Prefix gives the actor the visible slow-reasoning prefix. Handoff gives the actor both that prefix and structured guidance.</p>
+              <p>Jev-only selects actions without slow reasoning.</p>
+            </section>
+          </div>
+
+          <div class="evaluation-clock">
+            <div class="clock-mark" aria-hidden="true">2,048</div>
+            <div><p class="card-label">Evaluation clock</p><p>Each step has a shared allowance of 2,048 output tokens covering all online modules. A slow planning round can span steps, with a cap of 12,288 tokens. The clock tracks simulated output-token progress rather than measured wall-clock latency. Video playback time does not represent model inference time.</p></div>
+          </div>
+
+          <div class="disclosure-stack method-disclosures">
+            <details class="disclosure"><summary>Simulation protocol</summary><div class="disclosure-body"><p>The simulator precomputes each slow response and progressively exposes its budgeted prefixes. Each decision cycle advances the environment once. Newly released planner tokens and other online outputs are charged to the shared allowance; reusing an already released prefix is not charged again. Input tokens and offline refinement calls are excluded. All online roles use the same visible prefix snapshot within a cycle, and tokens disclosed after that snapshot become available in the next cycle.</p></div></details>
+            <details class="disclosure"><summary>Offline skill refinement</summary><div class="disclosure-body skill-copy">
+              <p>An offline LLM induces and revises a reusable skillbook from training trajectories, then compiles it into role-specific instructions for the planner and actor. Training task success helps assess and select revisions. Each collaboration configuration uses its own skillbook, learned on training settings disjoint from testing and fixed before evaluation. The formatter and checker retain their base instructions; all model weights remain frozen.</p>
+              <p>Skillbooks are refined on six additional Snake-Hard training seeds, disjoint from the test seeds. Training success requires survival to step 30 and at least one collected food item. Jev-only uses skills only for its actor.</p>
+            </div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section results-section" id="results" aria-labelledby="results-title">
+        <div class="page-shell">
+          <header class="section-header"><p class="section-number">04 / Results</p><h2 id="results-title">Results under a shared decision budget</h2><p>All methods use the same six test seeds for each task and difficulty. Snake results are available with and without refined skills; additional tasks use no skills.</p></header>
+          <details class="disclosure setup-disclosure"><summary>Evaluation setup</summary><div class="disclosure-body"><p>Episodes are limited to 30 steps for Snake and Freeway, 60 for Overcooked, and 100 for Plants vs. Zombies, subject to earlier task termination. All configurations share the same environment interface, legal and one-step-safe action information, and recent transition context.</p></div></details>
+
+          <section class="results-block snake-results" aria-labelledby="snake-results-title">
+            <div class="results-heading-row"><div><p class="card-label">Primary comparison · Snake-Hard</p><h3 id="snake-results-title">Reasoning interface × restart policy</h3></div><div class="segmented-control" data-skill-switch role="group" aria-label="Snake skill setting"><button type="button" aria-pressed="true" data-skill="without">Without skills</button><button type="button" aria-pressed="false" data-skill="refined">With refined skills</button></div></div>
+            <p class="result-summary" id="snake-summary" aria-live="polite"></p>
+            <div class="table-scroll" tabindex="0" aria-label="Scrollable Snake-Hard results table"><table class="results-table" id="snake-table"></table></div>
+            <p class="table-note">Six-seed means on Snake-Hard. Handoff includes the actor’s direct access to the visible prefix. Slow Calls counts planner invocations per episode, including the initial call; it does not measure token cost or wall-clock speed.</p>
+          </section>
+
+          <section class="results-block difficulty-results" aria-labelledby="difficulty-title">
+            <div class="subsection-heading"><p class="card-label">Across difficulty levels</p><h3 id="difficulty-title">Snake performance with and without refined skills</h3><p>DynaJev achieves the highest or joint-highest score across Easy, Medium, and Hard in both skill settings.</p></div>
+            <figure class="paper-figure difficulty-figure">
+              <button class="figure-button" type="button" data-figure-src="./assets/dynajev_difficulty_analysis.svg" data-figure-title="Snake performance across difficulty levels">
+                <img src="./assets/dynajev_difficulty_analysis.svg" alt="Figure 3 showing Snake scores across Easy, Medium, and Hard with and without refined skills" loading="lazy" />
+                <span>Expand Figure 3</span>
+              </button>
+              <figcaption>Figure 3. Score is food count minus a unit collision penalty. Values are six-seed means. The no-skill Jev-only baseline is shared across both panels.</figcaption>
+            </figure>
+          </section>
+
+          <section class="results-block additional-results" id="additional-results-panel" role="tabpanel" aria-labelledby="additional-results-title">
+            <div class="results-heading-row"><div><p class="card-label">Additional environments · Without skills</p><h3 id="additional-results-title">Compare all seven configurations</h3></div><div class="tab-list result-tabs" role="tablist" aria-label="Additional result environment"><button type="button" role="tab" aria-selected="true" data-result-environment="freeway">Freeway</button><button type="button" role="tab" aria-selected="false" data-result-environment="overcooked" tabindex="-1">Overcooked</button><button type="button" role="tab" aria-selected="false" data-result-environment="pvz" tabindex="-1">Plants vs. Zombies</button></div></div>
+            <div class="segmented-control difficulty-switch" id="pvz-difficulty-switch" role="group" aria-label="Plants vs. Zombies difficulty" hidden><button type="button" aria-pressed="true" data-pvz-difficulty="easy">Easy</button><button type="button" aria-pressed="false" data-pvz-difficulty="medium">Medium</button><button type="button" aria-pressed="false" data-pvz-difficulty="hard">Hard</button></div>
+            <p class="result-summary" id="additional-summary" aria-live="polite"></p>
+            <div class="table-scroll" tabindex="0" aria-label="Scrollable additional-environment results table"><table class="results-table" id="additional-table"></table></div>
+            <p class="table-note">Additional-environment results without skills, averaged over six test seeds per setting. Freeway Steps averages all episodes, counting unsuccessful episodes as 30 steps.</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="section analysis-section" id="analysis" aria-labelledby="analysis-title">
+        <div class="page-shell">
+          <header class="section-header"><p class="section-number">05 / Analysis</p><h2 id="analysis-title">What the comparisons reveal</h2></header>
+
+          <article class="analysis-block interface-analysis">
+            <div class="analysis-copy"><p class="analysis-index">01</p><h3>The interface changes the value of continuing reasoning</h3><p>On Snake-Hard without skills, Per-Step outperforms Completion with the Prefix interface, but the ordering reverses with Handoff. This suggests that the value of continued reasoning depends on how accumulated analysis is adapted to the current state. Updating guidance need not require restarting the planner at every step.</p><p class="analysis-note">Handoff both structures partial reasoning and adapts it to the latest observation; these comparisons assess their combined contribution.</p></div>
+            <div class="analysis-evidence"><div class="table-scroll"><table class="results-table compact-table" id="interface-analysis-table"></table></div><p id="selective-replanning-copy"></p></div>
+          </article>
+
+          <article class="analysis-block trajectory-analysis">
+            <div class="analysis-copy"><p class="analysis-index">02</p><h3>A safe move can still lead into a trap</h3><p>Before step 13, both up and left are immediately safe. Handoff–Completion favors up while its continuation remains unresolved, and Handoff–Per-Step incorrectly predicts when the body will clear a later route cell. Both choose up and later collide. DynaJev’s incomplete guidance supports a left move that preserves an exit; its updated handoff at step 14 clarifies the detour, enabling safe passage at step 17.</p><p class="analysis-conclusion">The case illustrates how actionable partial guidance and subsequent updates can help when immediate safety does not determine future feasibility.</p></div>
+            <figure class="paper-figure trajectory-figure"><button class="figure-button" type="button" data-figure-src="./assets/trajectory-wE-ktgmw.png" data-figure-title="Snake-Hard trajectory analysis"><img src="./assets/trajectory-wE-ktgmw.png" alt="Figure 4 comparing Handoff Completion, Handoff Per-Step, and DynaJev decisions from a shared Snake-Hard state" loading="lazy" /><span>Expand Figure 4</span></button><figcaption>Figure 4. Snake-Hard, seed 2, from a shared state before step 13. Completion and Per-Step denote Handoff–Completion and Handoff–Per-Step. Handoff excerpts are paraphrased.</figcaption></figure>
+          </article>
+
+          <div class="disclosure-stack analysis-disclosures">
+            <details class="disclosure"><summary>Direct access to the reasoning prefix</summary><div class="disclosure-body analysis-detail-grid"><p id="ablation-copy"></p><div><div class="table-scroll"><table class="results-table compact-table" id="ablation-table"></table></div><p class="table-note">Snake-Hard without skills, with the same Feedback restart configuration. The Handoff + Prefix row reuses the no-skill DynaJev result.</p></div></div></details>
+            <details class="disclosure"><summary>Skills provide configuration-dependent gains</summary><div class="disclosure-body skill-analysis-copy">
+              <p>Refined skills improve several configurations while all model weights remain frozen. Their effects depend on the online configuration: some gains are substantial, while others are limited or negative. The skill toggle in Results shows both settings.</p>
+              <div class="task-differences"><h3>Task differences</h3><p>Overcooked requires prerequisite chains across preparation, cooking, and delivery, so subgoal analysis can remain useful across several actions. Freeway keeps a persistent crossing goal while traffic gaps change. Plants vs. Zombies combines defensive planning with responses to arriving enemies. These task differences are consistent with different needs for reasoning continuity and replanning; PvZ results are compared within each difficulty because spawning frequency changes.</p></div>
+              <p class="analysis-conclusion">Across tasks, the relative value of continued reasoning and replanning depends on persistent subgoals and changing action conditions.</p>
+            </div></details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="page-shell footer-grid">
+      <a class="brand footer-brand" href="#overview" aria-label="DynaJev, back to overview"><svg viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="11" fill="currentColor"></rect><path d="M9 11h8c5 0 5 14 10 14M9 25h8c5 0 5-14 10-14" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"></path><circle cx="10" cy="11" r="2" fill="white"></circle><circle cx="10" cy="25" r="2" fill="white"></circle></svg><span>Dyna<span>Jev</span></span></a>
+      <div class="footer-copy"><p class="paper-title">Timely Guidance for Fast Decisions: Dynamic LLM–Jev Collaboration under Time Pressure</p><div class="resource-links footer-resources" data-resource-links hidden aria-label="Paper resources"></div></div>
+      <a class="back-top" href="#overview">Back to overview <span aria-hidden="true">↑</span></a>
+    </div></footer>
+
+    <dialog class="figure-dialog" id="figure-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-toolbar"><div><p class="card-label">Paper figure</p><h3 id="dialog-title"></h3></div><button class="dialog-close" type="button" aria-label="Close expanded figure">×</button></div>
+      <div class="dialog-media"><img id="dialog-image" alt="Expanded paper figure" hidden /><iframe id="dialog-document" title="Expanded paper figure" hidden></iframe></div>
+    </dialog>
+  </body>
+</html>
